@@ -33,7 +33,7 @@ const db = pool.promise();
 (async () => {
   try {
     await db.query('SELECT 1');
-    console.log('✅  MySQL connected to database: ' + (process.env.DB_NAME || 'chinmay_db'));
+    console.log('✅  MySQL connected to database: ' + (process.env.MYSQLDATABASE || process.env.DB_NAME || 'chinmay_db'));
   } catch (err) {
     console.error('❌  MySQL connection failed:', err.message);
     console.error('    Make sure MySQL is running and .env is configured correctly.');
